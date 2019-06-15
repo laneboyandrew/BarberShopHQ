@@ -11,8 +11,13 @@ end
 class Barber < ActiveRecord::Base
 end
 
+class Contact < ActiveRecord::Base
+end
+
 before do
 	@barbers = Barber.all
+  @clients = Client.all
+  @contacts = Contact.all
 end
 
 get '/' do
@@ -32,4 +37,13 @@ post '/visit' do
   @color = params[:color]
 
   erb "<h2> Спасибо, Вы записались!</h2>"
+end
+
+get '/contacts' do
+erb :contacts
+end
+
+post '/contacts' do
+  
+erb "<h2>Thank you for feedback!</h2>"
 end
