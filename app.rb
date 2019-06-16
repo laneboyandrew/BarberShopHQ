@@ -36,6 +36,13 @@ post '/visit' do
   @barber = params[:barber]
   @color = params[:color]
 
+  c = Client.new
+  c.name = @username
+  c.phone = @phone
+  c.datestamp = @datetime
+  c.barber = @barber
+  c.color = @color
+  c.save
   erb "<h2> Спасибо, Вы записались!</h2>"
 end
 
@@ -44,6 +51,12 @@ erb :contacts
 end
 
 post '/contacts' do
-  
+  @username = params[:username]
+  @textarea = params[:textarea]
+
+  c = Contact.new
+  c.name = @username
+  c.textarea = @textarea
+  c.save
 erb "<h2>Thank you for feedback!</h2>"
 end
