@@ -59,3 +59,7 @@ post '/contacts' do
   c.save
 erb "<h2>Thank you for feedback!</h2>"
 end
+
+get '/barber/:id' do
+  erb :barber
+end
