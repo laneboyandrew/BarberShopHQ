@@ -61,5 +61,6 @@ erb "<h2>Thank you for feedback!</h2>"
 end
 
 get '/barber/:id' do
+  @barber = Barber.find (params[:id])
   erb :barber
 end
