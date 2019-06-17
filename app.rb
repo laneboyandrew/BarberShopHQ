@@ -35,6 +35,7 @@ get '/visit' do
 end
 
 post '/visit' do
+
   @c = Client.new params[:client]
  if @c.save
   erb "<h2> Спасибо, Вы записались!</h2>"
